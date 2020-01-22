@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class CardPuzzleStart : MonoBehaviour
 {
-    private GameObject go_Player;
+    private GameObject go_Player, go_PickedCard=null;
     public GameObject[] GO_Cards;
     private GameObject[] GO_CardPlaceholders;
     private List<GameObject> goList_Cards=new List<GameObject>();
     private Camera cm_CardCamera, cm_PlayerCamera;
-    private bool bl_PlayerInRange = false, bl_InPuzzle=false;
+    private int i_CardsPicked=0, i_CardsLeft=20;
+    private bool bl_PlayerInRange = false, bl_InPuzzle = false, bl_Waiting=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,11 +45,29 @@ public class CardPuzzleStart : MonoBehaviour
             StartCoroutine(FlipCards());
         }
 
+        //While in puzzle
         if(bl_InPuzzle)
         {
-            if (Input.GetMouseButtonDown(0))
+            //Puzzle completed
+            if (i_CardsLeft == 0)
             {
-
+                cm_CardCamera.enabled = false;
+                go_Player.SetActive(true);
+                bl_InPuzzle = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            //Card picking
+            if (Input.GetMouseButtonDown(0) && !bl_Waiting)
+            {
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit, 100.0f))
+                {
+                    if (hit.transform.tag == "Card")
+                    {
+                        StartCoroutine(PickCard(hit.transform.gameObject));
+                    }
+                }
             }
         }
     }
@@ -121,6 +140,41 @@ public class CardPuzzleStart : MonoBehaviour
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
+    private IEnumerator PickCard(GameObject card)
+    {
+        card.transform.Rotate(180, 0, 180);
+        i_CardsPicked++;
+        //First card picked
+        if (i_CardsPicked==1)
+        {
+            go_PickedCard = card;
+        }
+        //Second card picked
+        else if(i_CardsPicked==2)
+        {
+            bl_Waiting = true;
+            yield return new WaitForSeconds(0.5f);
+            //If they match
+            if (go_PickedCard.name==card.name)
+            {
+                Debug.Log("Right");
+                GameObject.Destroy(go_PickedCard);
+                GameObject.Destroy(card);
+                i_CardsLeft -= 2;
+            }
+            //If they don't match
+            else
+            {
+                Debug.Log("Wrong");
+                go_PickedCard.transform.Rotate(-180, 0, -180);
+                card.transform.Rotate(-180, 0, -180);
+            }
+            go_PickedCard = null;
+            i_CardsPicked = 0;
+            bl_Waiting = false;
         }
     }
 }
