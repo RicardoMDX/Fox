@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CheckForItem : MonoBehaviour
 {
+    public GameObject go_ItemHolder;
+    public Text txt_PickUpText;
+
+    private bool b_HoldingItem=false;
     private Camera camera;
     private GameObject lastObject=null;
 
@@ -18,17 +23,45 @@ public class CheckForItem : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 3f))
+        if (!b_HoldingItem)
         {
-            if(hit.transform.tag=="Item")
+            if (Physics.Raycast(ray, out hit, 3f))
             {
-                hit.transform.SendMessage("HighlightItem");
-                lastObject = hit.transform.gameObject;
+                if (hit.transform.tag == "Item")
+                {
+                    txt_PickUpText.enabled = true;
+                    hit.transform.SendMessage("HighlightItem");
+                    lastObject = hit.transform.gameObject;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        lastObject.GetComponent<Rigidbody>().isKinematic = true;
+                        lastObject.transform.position = go_ItemHolder.transform.position;
+                        lastObject.transform.parent = go_ItemHolder.transform;
+                        b_HoldingItem = true;
+                        lastObject.SendMessage("DehighlightItem");
+                        txt_PickUpText.enabled = false;
+                    }
+                }
+                else if (lastObject != null)
+                {
+                    txt_PickUpText.enabled = false;
+                    lastObject.SendMessage("DehighlightItem");
+                }
+            }
+            else if (lastObject != null)
+            {
+                txt_PickUpText.enabled = false;
+                lastObject.SendMessage("DehighlightItem");
             }
         }
-        else if(lastObject!=null)
+        else
         {
-            lastObject.SendMessage("DehighlightItem");
+            if(Input.GetMouseButtonDown(0))
+            {
+                lastObject.GetComponent<Rigidbody>().isKinematic = false;
+                lastObject.transform.parent = null;
+                b_HoldingItem = false;
+            }
         }
     }
 }
