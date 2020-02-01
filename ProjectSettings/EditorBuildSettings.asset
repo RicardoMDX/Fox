@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Room1Entrance.unity
+    guid: 88bf09996ec82c14386d547fa40cc0a4
+  - enabled: 1
+    path: Assets/Scenes/Room2CardGame.unity
+    guid: 1e5099810edf6a546baa6746df13e74f
+  - enabled: 1
+    path: Assets/Scenes/Room3FallingFloor.unity
+    guid: 052823b00a734614aa395fc98044625a
+  - enabled: 1
+    path: Assets/Scenes/Room4Potion.unity
+    guid: ea329e4ef90296c4cb76f24c9142a73a
   m_configObjects: {}
