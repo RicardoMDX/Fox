@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class CardPuzzleStart : MonoBehaviour
 {
-    private GameObject go_Player, go_PickedCard=null;
+    public Text txt_InteractText;
     public GameObject[] GO_Cards;
+    private GameObject go_Player, go_PickedCard = null;
     private GameObject[] GO_CardPlaceholders;
     private List<GameObject> goList_Cards=new List<GameObject>();
     private Camera cm_CardCamera, cm_PlayerCamera;
     private int i_CardsPicked=0, i_CardsLeft=20;
-    private bool bl_PlayerInRange = false, bl_InPuzzle = false, bl_Waiting=false;
+    private bool bl_PlayerInRange = false, bl_InPuzzle = false, bl_Waiting=false, bl_GameStarted=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class CardPuzzleStart : MonoBehaviour
             cm_CardCamera.enabled = true;
             bl_InPuzzle = true;
             StartCoroutine(FlipCards());
+            bl_GameStarted = true;
         }
         //Leave puzzle
         else if(Input.GetKeyDown(KeyCode.E) && bl_InPuzzle)
@@ -77,6 +79,7 @@ public class CardPuzzleStart : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             Debug.Log("Player in range");
+            txt_InteractText.enabled = true;
             bl_PlayerInRange = true;
         }
     }
@@ -86,6 +89,7 @@ public class CardPuzzleStart : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             Debug.Log("Player not in range");
+            txt_InteractText.enabled = false;
             bl_PlayerInRange = false;
         }
     }
@@ -123,18 +127,20 @@ public class CardPuzzleStart : MonoBehaviour
         GO_CardPlaceholders = GameObject.FindGameObjectsWithTag("Card");
         if (bl_InPuzzle)
         {
-            foreach (GameObject card in GO_CardPlaceholders)
+            if (!bl_GameStarted)
             {
-                card.transform.Rotate(180, 0, 180);
+                foreach (GameObject card in GO_CardPlaceholders)
+                {
+                    card.transform.Rotate(180, 0, 180);
+                }
+
+                yield return new WaitForSeconds(3);
+
+                foreach (GameObject card in GO_CardPlaceholders)
+                {
+                    card.transform.Rotate(-180, 0, -180);
+                }
             }
-
-            yield return new WaitForSeconds(3);
-
-            foreach (GameObject card in GO_CardPlaceholders)
-            {
-                card.transform.Rotate(-180, 0, -180);
-            }
-
             Cursor.lockState = CursorLockMode.None;
         }
         else

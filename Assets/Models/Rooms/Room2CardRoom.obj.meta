@@ -5,13 +5,20 @@ ModelImporter:
   fileIDToRecycleName:
     100000: pPlane45
     100002: //RootNode
+    100004: pSphere21
     400000: pPlane45
     400002: //RootNode
+    400004: pSphere21
     2100000: pPlane45Mat
+    2100002: pSphere21Mat
     2300000: pPlane45
+    2300002: pSphere21
     3300000: pPlane45
+    3300002: pSphere21
     4300000: pPlane45
+    4300002: pSphere21
     6400000: pPlane45
+    6400002: pSphere21
   externalObjects: {}
   materials:
     importMaterials: 1
