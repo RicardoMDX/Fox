@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CardPuzzleStart : MonoBehaviour
 {
-    public Text txt_InteractText;
+    public Text txt_InteractText, txt_Crosshair;
     public GameObject[] GO_Cards;
     private GameObject go_Player, go_PickedCard = null;
     private GameObject[] GO_CardPlaceholders;
@@ -31,6 +31,8 @@ public class CardPuzzleStart : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && bl_PlayerInRange && !bl_InPuzzle)
         {
             Debug.Log("Enter puzzle");
+            txt_InteractText.enabled = false;
+            txt_Crosshair.enabled=false;
             go_Player.SetActive(false);
             cm_CardCamera.enabled = true;
             bl_InPuzzle = true;
@@ -42,6 +44,8 @@ public class CardPuzzleStart : MonoBehaviour
         {
             Debug.Log("Leave puzzle");
             cm_CardCamera.enabled = false;
+            txt_InteractText.enabled = true;
+            txt_Crosshair.enabled = true;
             go_Player.SetActive(true);
             bl_InPuzzle = false;
             StartCoroutine(FlipCards());
