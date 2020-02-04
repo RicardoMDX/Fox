@@ -36,7 +36,7 @@ public class CheckIfBelowLevel : MonoBehaviour
 		if( fadeInOnReset )
 		{
 			// see if we already have a "camera fade on start"
-			CameraFadeOnStart fade = GameObject.Find("Main Camera").GetComponent<CameraFadeOnStart>();
+			CameraFadeOnStart fade = GameObject.Find("PlayerCamera").GetComponent<CameraFadeOnStart>();
 			if( fade != null )
 			{
 				fade.Fade();
