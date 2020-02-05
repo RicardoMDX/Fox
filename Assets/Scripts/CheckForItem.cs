@@ -47,16 +47,25 @@ public class CheckForItem : MonoBehaviour
                     txt_PickUpText.enabled = false;
                     lastObject.SendMessage("DehighlightItem");
                 }
+                else
+                {
+                    txt_PickUpText.enabled = false;
+                }
             }
             else if (lastObject != null)
             {
                 txt_PickUpText.enabled = false;
                 lastObject.SendMessage("DehighlightItem");
             }
+            else
+            {
+                txt_PickUpText.enabled = false;
+            }
         }
         else
         {
-            if(Input.GetMouseButtonDown(0))
+            txt_PickUpText.enabled = false;
+            if (Input.GetMouseButtonDown(0))
             {
                 lastObject.GetComponent<Rigidbody>().isKinematic = false;
                 lastObject.transform.parent = null;

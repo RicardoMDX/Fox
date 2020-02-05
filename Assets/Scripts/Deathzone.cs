@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Deathzone : MonoBehaviour
 {
-    public GameObject go_SpawnPlayer, go_SpawnObject, go_Player;
+    public GameObject go_SpawnObject, go_Player;
     // Start is called before the first frame update
     void Start()
     {

@@ -6,19 +6,103 @@ ModelImporter:
     100000: pPlane45
     100002: //RootNode
     100004: pSphere21
+    100006: group1_pCube20
+    100008: group1_pCube21
+    100010: group1_pCube22
+    100012: group1_pCube23
+    100014: group1_pCylinder8
+    100016: group1_pPlane49
+    100018: group1_pSphere21
+    100020: group1_pSphere22
+    100022: group1_pSphere23
+    100024: group1_pSphere24
+    100026: group1_pSphere25
+    100028: pPlane48_group1
     400000: pPlane45
     400002: //RootNode
     400004: pSphere21
+    400006: group1_pCube20
+    400008: group1_pCube21
+    400010: group1_pCube22
+    400012: group1_pCube23
+    400014: group1_pCylinder8
+    400016: group1_pPlane49
+    400018: group1_pSphere21
+    400020: group1_pSphere22
+    400022: group1_pSphere23
+    400024: group1_pSphere24
+    400026: group1_pSphere25
+    400028: pPlane48_group1
     2100000: pPlane45Mat
     2100002: pSphere21Mat
+    2100004: group1_pCube20Mat
+    2100006: group1_pCube21Mat
+    2100008: group1_pCube22Mat
+    2100010: group1_pCube23Mat
+    2100012: group1_pCylinder8Mat
+    2100014: group1_pPlane49Mat
+    2100016: group1_pSphere21Mat
+    2100018: group1_pSphere22Mat
+    2100020: group1_pSphere23Mat
+    2100022: group1_pSphere24Mat
+    2100024: group1_pSphere25Mat
+    2100026: pPlane48_group1Mat
     2300000: pPlane45
     2300002: pSphere21
+    2300004: group1_pCube20
+    2300006: group1_pCube21
+    2300008: group1_pCube22
+    2300010: group1_pCube23
+    2300012: group1_pCylinder8
+    2300014: group1_pPlane49
+    2300016: group1_pSphere21
+    2300018: group1_pSphere22
+    2300020: group1_pSphere23
+    2300022: group1_pSphere24
+    2300024: group1_pSphere25
+    2300026: pPlane48_group1
     3300000: pPlane45
     3300002: pSphere21
+    3300004: group1_pCube20
+    3300006: group1_pCube21
+    3300008: group1_pCube22
+    3300010: group1_pCube23
+    3300012: group1_pCylinder8
+    3300014: group1_pPlane49
+    3300016: group1_pSphere21
+    3300018: group1_pSphere22
+    3300020: group1_pSphere23
+    3300022: group1_pSphere24
+    3300024: group1_pSphere25
+    3300026: pPlane48_group1
     4300000: pPlane45
     4300002: pSphere21
+    4300004: group1_pCube20
+    4300006: group1_pCube21
+    4300008: group1_pCube22
+    4300010: group1_pCube23
+    4300012: group1_pCylinder8
+    4300014: group1_pPlane49
+    4300016: group1_pSphere21
+    4300018: group1_pSphere22
+    4300020: group1_pSphere23
+    4300022: group1_pSphere24
+    4300024: group1_pSphere25
+    4300026: pPlane48_group1
     6400000: pPlane45
     6400002: pSphere21
+    6400004: group1_pCube20
+    6400006: group1_pCube21
+    6400008: group1_pCube22
+    6400010: group1_pCube23
+    6400012: group1_pCylinder8
+    6400014: group1_pPlane49
+    6400016: group1_pSphere21
+    6400018: group1_pSphere22
+    6400020: group1_pSphere23
+    6400022: group1_pSphere24
+    6400024: group1_pSphere25
+    6400026: pPlane48_group1
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -5,13 +5,76 @@ ModelImporter:
   fileIDToRecycleName:
     100000: pCylinder3
     100002: //RootNode
+    100004: group1_pCube8
+    100006: group1_pCube9
+    100008: group1_pCylinder3
+    100010: group1_pPipe7
+    100012: group1_pPipe8
+    100014: group1_pPipe9
+    100016: group1_pPlane3
+    100018: group1_pPyramid5
+    100020: pCube7_group1
     400000: pCylinder3
     400002: //RootNode
+    400004: group1_pCube8
+    400006: group1_pCube9
+    400008: group1_pCylinder3
+    400010: group1_pPipe7
+    400012: group1_pPipe8
+    400014: group1_pPipe9
+    400016: group1_pPlane3
+    400018: group1_pPyramid5
+    400020: pCube7_group1
     2100000: pCylinder3Mat
+    2100002: group1_pCube8Mat
+    2100004: group1_pCube9Mat
+    2100006: group1_pCylinder3Mat
+    2100008: group1_pPipe7Mat
+    2100010: group1_pPipe8Mat
+    2100012: group1_pPipe9Mat
+    2100014: group1_pPlane3Mat
+    2100016: group1_pPyramid5Mat
+    2100018: pCube7_group1Mat
     2300000: pCylinder3
+    2300002: group1_pCube8
+    2300004: group1_pCube9
+    2300006: group1_pCylinder3
+    2300008: group1_pPipe7
+    2300010: group1_pPipe8
+    2300012: group1_pPipe9
+    2300014: group1_pPlane3
+    2300016: group1_pPyramid5
+    2300018: pCube7_group1
     3300000: pCylinder3
+    3300002: group1_pCube8
+    3300004: group1_pCube9
+    3300006: group1_pCylinder3
+    3300008: group1_pPipe7
+    3300010: group1_pPipe8
+    3300012: group1_pPipe9
+    3300014: group1_pPlane3
+    3300016: group1_pPyramid5
+    3300018: pCube7_group1
     4300000: pCylinder3
+    4300002: group1_pCube8
+    4300004: group1_pCube9
+    4300006: group1_pCylinder3
+    4300008: group1_pPipe7
+    4300010: group1_pPipe8
+    4300012: group1_pPipe9
+    4300014: group1_pPlane3
+    4300016: group1_pPyramid5
+    4300018: pCube7_group1
     6400000: pCylinder3
+    6400002: group1_pCube8
+    6400004: group1_pCube9
+    6400006: group1_pCylinder3
+    6400008: group1_pPipe7
+    6400010: group1_pPipe8
+    6400012: group1_pPipe9
+    6400014: group1_pPlane3
+    6400016: group1_pPyramid5
+    6400018: pCube7_group1
   externalObjects: {}
   materials:
     importMaterials: 1
