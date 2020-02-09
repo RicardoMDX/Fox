@@ -105,14 +105,6 @@ public class CardPuzzleStart : MonoBehaviour
         {
             goList_Cards.Add(card);
             goList_Cards.Add(card);
-            goList_Cards.Add(card);
-            goList_Cards.Add(card);
-            goList_Cards.Add(card);
-            goList_Cards.Add(card);
-            goList_Cards.Add(card);
-            goList_Cards.Add(card);
-            goList_Cards.Add(card);
-            goList_Cards.Add(card);
         }
         Debug.Log(goList_Cards.Count);
         //Replace placeholders with cards

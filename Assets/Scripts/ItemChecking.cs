@@ -13,7 +13,6 @@ public class ItemChecking : MonoBehaviour
     {
         cl_CheckArea = GetComponent<CapsuleCollider>();
         l_Light = GetComponentInChildren<Light>();
-        Debug.Log(l_Light);
     }
 
     // Update is called once per frame
@@ -24,9 +23,9 @@ public class ItemChecking : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(GO_CorrectItems.Contains(other.gameObject))
+        if(GO_CorrectItems.Contains(other.transform.parent.gameObject))
         {
-            GameObject.Destroy(other.transform.gameObject);
+            GameObject.Destroy(other.transform.parent.gameObject);
             l_Light.color = Color.green;
             l_Light.enabled = true;
             StartCoroutine(Wait());

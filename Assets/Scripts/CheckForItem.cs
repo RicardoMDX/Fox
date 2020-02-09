@@ -36,6 +36,7 @@ public class CheckForItem : MonoBehaviour
                     {
                         lastObject.GetComponent<Rigidbody>().isKinematic = true;
                         lastObject.transform.position = go_ItemHolder.transform.position;
+                        lastObject.transform.rotation = go_ItemHolder.transform.rotation;
                         lastObject.transform.parent = go_ItemHolder.transform;
                         b_HoldingItem = true;
                         lastObject.SendMessage("DehighlightItem");
@@ -64,12 +65,15 @@ public class CheckForItem : MonoBehaviour
         }
         else
         {
-            txt_PickUpText.enabled = false;
-            if (Input.GetMouseButtonDown(0))
+            if (lastObject != null)
             {
-                lastObject.GetComponent<Rigidbody>().isKinematic = false;
-                lastObject.transform.parent = null;
-                b_HoldingItem = false;
+                txt_PickUpText.enabled = false;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    lastObject.GetComponent<Rigidbody>().isKinematic = false;
+                    lastObject.transform.parent = null;
+                    b_HoldingItem = false;
+                }
             }
         }
     }

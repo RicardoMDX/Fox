@@ -9,7 +9,7 @@ public class Highlight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startcolor = GetComponent<Renderer>().material.color;
+        startcolor = GetComponentInChildren<Renderer>().material.color;
     }
 
     // Update is called once per frame
@@ -20,11 +20,11 @@ public class Highlight : MonoBehaviour
 
     public void HighlightItem()
     {
-        GetComponent<Renderer>().material.color = Color.yellow;
+        GetComponentInChildren<Renderer>().material.color = Color.yellow;
     }
 
     public void DehighlightItem()
     {
-        GetComponent<Renderer>().material.color = startcolor;
+        GetComponentInChildren<Renderer>().material.color = startcolor;
     }
 }
