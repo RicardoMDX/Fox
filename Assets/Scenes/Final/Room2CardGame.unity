@@ -3582,7 +3582,7 @@ PrefabInstance:
     - target: {fileID: 187122037, guid: 25e3ab2d6992a48f3ab7455baed062e0, type: 3}
       propertyPath: txt_PickUpText
       value: 
-      objectReference: {fileID: 1469111763}
+      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 25e3ab2d6992a48f3ab7455baed062e0, type: 3}
       propertyPath: m_Name
       value: PlayerCamera
@@ -26965,18 +26965,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: c59b3e6e31d1f124e9292fa7c567ae05, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c38ef15919ad22848a32e49f150e9bab, type: 2}
-    - target: {fileID: 2300000, guid: c59b3e6e31d1f124e9292fa7c567ae05, type: 3}
-      propertyPath: m_SelectedEditorRenderState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3300000, guid: c59b3e6e31d1f124e9292fa7c567ae05, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 1919739612}
     - target: {fileID: 400002, guid: c59b3e6e31d1f124e9292fa7c567ae05, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0.7071068
@@ -27001,6 +26989,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 1.399
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: c59b3e6e31d1f124e9292fa7c567ae05, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c38ef15919ad22848a32e49f150e9bab, type: 2}
+    - target: {fileID: 2300000, guid: c59b3e6e31d1f124e9292fa7c567ae05, type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: c59b3e6e31d1f124e9292fa7c567ae05, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1919739612}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c59b3e6e31d1f124e9292fa7c567ae05, type: 3}
 --- !u!1 &2086808617 stripped

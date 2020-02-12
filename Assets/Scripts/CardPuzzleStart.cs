@@ -69,7 +69,7 @@ public class CardPuzzleStart : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hit, 100.0f))
                 {
-                    if (hit.transform.tag == "Card")
+                    if (hit.transform.tag == "Card" && hit.transform.gameObject!=go_PickedCard)
                     {
                         StartCoroutine(PickCard(hit.transform.gameObject));
                     }
