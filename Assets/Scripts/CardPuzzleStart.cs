@@ -7,10 +7,14 @@ public class CardPuzzleStart : MonoBehaviour
 {
     public Text txt_InteractText, txt_Crosshair;
     public GameObject[] GO_Cards;
+    public AudioSource aus_Door;
+
     private GameObject go_Player, go_PickedCard = null;
     private GameObject[] GO_CardPlaceholders;
     private List<GameObject> goList_Cards=new List<GameObject>();
     private Camera cm_CardCamera, cm_PlayerCamera;
+    private AudioSource aus_CardSelected;
+
     private int i_CardsPicked=0, i_CardsLeft=20;
     private bool bl_PlayerInRange = false, bl_InPuzzle = false, bl_Waiting=false, bl_GameStarted=false;
     // Start is called before the first frame update
@@ -20,6 +24,7 @@ public class CardPuzzleStart : MonoBehaviour
         cm_CardCamera = GetComponentInChildren<Camera>();
         cm_PlayerCamera = GameObject.Find("PlayerCamera").GetComponentInChildren<Camera>();
         GO_CardPlaceholders = GameObject.FindGameObjectsWithTag("Card");
+        aus_CardSelected = GetComponent<AudioSource>();
         ShuffleCards();
         Debug.Log(cm_CardCamera + "\n" + cm_PlayerCamera);
     }
@@ -61,6 +66,7 @@ public class CardPuzzleStart : MonoBehaviour
                 go_Player.SetActive(true);
                 bl_InPuzzle = false;
                 Cursor.lockState = CursorLockMode.Locked;
+                aus_Door.Play();
             }
             //Card picking
             if (Input.GetMouseButtonDown(0) && !bl_Waiting)
@@ -72,6 +78,7 @@ public class CardPuzzleStart : MonoBehaviour
                     if (hit.transform.tag == "Card" && hit.transform.gameObject!=go_PickedCard)
                     {
                         StartCoroutine(PickCard(hit.transform.gameObject));
+                        aus_CardSelected.Play();
                     }
                 }
             }
