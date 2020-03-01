@@ -6,10 +6,13 @@ public class Room4Manager : MonoBehaviour
 {
     public GameObject go_Path, go_Floor;
     public Material mat_OriginalColour;
+
+    private AudioSource aus_Path;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        aus_Path = GetComponent<AudioSource>();    
     }
 
     // Update is called once per frame
@@ -23,6 +26,7 @@ public class Room4Manager : MonoBehaviour
     {
         if (other.gameObject.tag == "Item")
         {
+            aus_Path.Play();
             Debug.Log("Item entered");
             go_Path.GetComponent<Renderer>().material.color = mat_OriginalColour.color;
             go_Floor.GetComponent<MeshCollider>().enabled = true;
@@ -34,6 +38,7 @@ public class Room4Manager : MonoBehaviour
     {
         if(other.gameObject.tag=="Item")
         {
+            aus_Path.Play();
             Debug.Log("Item left");
             go_Path.GetComponent<Renderer>().material.color = go_Floor.GetComponent<Renderer>().material.color;
             go_Floor.GetComponent<MeshCollider>().enabled = false;

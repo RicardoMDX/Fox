@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
+
+    private AudioSource aus_Door;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        aus_Door = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,7 +23,8 @@ public class OpenDoor : MonoBehaviour
     {
         if(other.gameObject.tag=="Item")
         {
-            GameObject.Destroy(this.gameObject);
+            aus_Door.Play();
+            GameObject.Destroy(this.gameObject,5f);
             GameObject.Destroy(other.gameObject);
         }
     }
